@@ -210,3 +210,11 @@ All tests should pass.
 ## Notes
 
 The tests mock the AI model call, so you do not need Ollama for automated grading. Ollama is only needed if you want to manually test the full model call locally.
+
+## Reflection
+
+In this lab, I learned how retrieval helps ground an AI-generated answer in relevant company documentation. The application uses keyword matching to select documents, then includes that context in a structured prompt. Returning source IDs and titles also makes the answer easier to review.
+
+When no relevant documents are found, the endpoint returns a fallback without calling the model. This helps prevent unsupported answers when the approved documentation does not contain enough information.
+
+One challenge was understanding why a test failed even though my response had a similar meaning. I used the test output to identify the required wording and updated the response. This reinforced the importance of reading test expectations carefully. All 19 tests passed after the changes.
